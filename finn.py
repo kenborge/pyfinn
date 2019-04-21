@@ -56,7 +56,7 @@ def _scrape_viewings(html):
 
 def _parse_price(html):
     label, parent, *rest = html.find('*', containing='Prisantydning')
-    tag = label.pq[0].tag
+    tag = label.tag
     return _clean(parent.find(f'{tag} + {tag}', first=True).text)
 
 
